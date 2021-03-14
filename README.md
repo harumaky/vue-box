@@ -1,4 +1,4 @@
-# box
+# box - Vueの練習
 
 ## Project setup
 ```

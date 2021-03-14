@@ -4,7 +4,7 @@
       <v-container>
         <h3 class="mb-3">便利リンク</h3>
         <ul>
-          <li v-for="item in goodLinks" :key="item[1]" class="mb-2">
+          <li v-for="(item, idx) in goodLinks" :key="idx" class="mb-2">
             <a :href="item[1]" target="_blank">{{ item[0] }}</a>
           </li>
         </ul>
@@ -17,7 +17,7 @@
         <v-tooltip left allow-overflow>
           <template v-slot:activator="{ on, attrs }">
             <v-switch
-              v-model="$vuetify.theme.dark"
+              @click="changeTheme"
               v-bind="attrs"
               v-on="on"
               color="white"
@@ -30,7 +30,8 @@
     </v-app-bar>
 
     <v-main>
-      <Intro />
+      <Intro ref="intro"/>
+      <div class="mb-15"></div>
       <Boxes />
     </v-main>
   </v-app>
@@ -51,6 +52,7 @@ export default Vue.extend({
 
   data: () => ({
     drawer: false,
+    bgcolor: "#ffffff",
     goodLinks: [
       ["アイコン検索（mdi-）", "https://vuetifyjs.com/ja/features/icon-fonts/"],
       [".d-系", "https://vuetifyjs.com/ja/styles/display/"],
@@ -61,7 +63,15 @@ export default Vue.extend({
       ],
       ["トランジション", "https://vuetifyjs.com/ja/styles/transitions/"]
     ]
-  })
+  }),
+
+  methods: {
+    changeTheme() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark
+      this.bgcolor = this.bgcolor === "#ffffff" ? "#121212" : "#ffffff";
+      this.$refs.intro.changeTheme(this.bgcolor);
+    }
+  }
 });
 </script>
 
