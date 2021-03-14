@@ -4,14 +4,14 @@ import vuetify from "./plugins/vuetify";
 import { VueMasonryPlugin } from "vue-masonry";
 
 Vue.config.productionTip = false;
-Vue.config.devtools = process.env.NODE_ENV === 'development'
-Vue.use(VueMasonryPlugin)
+Vue.config.devtools = process.env.NODE_ENV === "development";
+Vue.use(VueMasonryPlugin);
 
 new Vue({
   vuetify,
   created() {
-    const html = document.documentElement
-    html.setAttribute('lang', 'ja')
+    const html = document.documentElement;
+    html.setAttribute("lang", "ja");
   },
   render: h => h(App)
 }).$mount("#app");

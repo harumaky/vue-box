@@ -1,7 +1,6 @@
 <template>
   <v-container>
     <v-row class="text-center">
-
       <v-col class="mb-4">
         <h1 class="text-h1 mb-3">
           Box
@@ -21,8 +20,6 @@ import Vue from "vue";
 export default Vue.extend({
   name: "Intro",
 
-  data: () => ({
-   
-  })
+  data: () => ({})
 });
 </script>

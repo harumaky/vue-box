@@ -1,15 +1,11 @@
 <template>
   <v-app>
-
-    <v-navigation-drawer
-      v-model="drawer"
-      app
-    >
+    <v-navigation-drawer v-model="drawer" app>
       <v-container>
         <h3 class="mb-3">便利リンク</h3>
         <ul>
           <li v-for="item in goodLinks" :key="item[1]" class="mb-2">
-            <a :href="item[1]" target="_blank">{{item[0]}}</a>
+            <a :href="item[1]" target="_blank">{{ item[0] }}</a>
           </li>
         </ul>
       </v-container>
@@ -30,7 +26,6 @@
           </template>
           <span>テーマを変更</span>
         </v-tooltip>
-       
       </div>
     </v-app-bar>
 
@@ -55,14 +50,17 @@ export default Vue.extend({
   },
 
   data: () => ({
-      drawer: false,
-      goodLinks: [
-        ['アイコン検索（mdi-）', 'https://vuetifyjs.com/ja/features/icon-fonts/'],
-        ['.d-系', 'https://vuetifyjs.com/ja/styles/display/'],
-        ['margin/padding', 'https://vuetifyjs.com/ja/styles/spacing/'],
-        ['タイポグラフィ', 'https://vuetifyjs.com/ja/styles/text-and-typography/'],
-        ['トランジション', 'https://vuetifyjs.com/ja/styles/transitions/'],
-      ]
+    drawer: false,
+    goodLinks: [
+      ["アイコン検索（mdi-）", "https://vuetifyjs.com/ja/features/icon-fonts/"],
+      [".d-系", "https://vuetifyjs.com/ja/styles/display/"],
+      ["margin/padding", "https://vuetifyjs.com/ja/styles/spacing/"],
+      [
+        "タイポグラフィ",
+        "https://vuetifyjs.com/ja/styles/text-and-typography/"
+      ],
+      ["トランジション", "https://vuetifyjs.com/ja/styles/transitions/"]
+    ]
   })
 });
 </script>
