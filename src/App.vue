@@ -67,9 +67,9 @@ export default Vue.extend({
 
   methods: {
     changeTheme() {
-      this.$vuetify.theme.dark = !this.$vuetify.theme.dark
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
       this.bgcolor = this.bgcolor === "#ffffff" ? "#121212" : "#ffffff";
-      this.$refs.intro.changeTheme(this.bgcolor);
+      (this.$refs.intro as Vue & {changeTheme: (p: string) => void}).changeTheme(this.bgcolor);
     }
   }
 });
