@@ -9,9 +9,5 @@ Vue.use(VueMasonryPlugin);
 
 new Vue({
   vuetify,
-  created() {
-    const html = document.documentElement;
-    html.setAttribute("lang", "ja");
-  },
   render: h => h(App)
 }).$mount("#app");

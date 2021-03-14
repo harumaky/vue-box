@@ -5,7 +5,10 @@
         <div class="box-card__head primary d-flex px-3">
           <v-card-title>{{ title }}</v-card-title>
           <div class="box-card__head-tools ml-auto d-flex align-center">
-            <v-dialog v-model="dialog">
+            <v-dialog 
+              v-model="dialog"
+              width="500"
+            >
               <template #activator="{ on, attrs }">
                 <v-btn
                   :disabled="!hasmemo"
@@ -16,7 +19,7 @@
                   <v-icon>mdi-information-outline</v-icon>
                 </v-btn>
               </template>
-              <v-card>
+              <v-card class="dialog__card">
                 <v-card-title class="primary">{{ title }}のメモ</v-card-title>
                 <v-card-text class="pa-3 text-body-1">
                   <slot name="memo"></slot>
